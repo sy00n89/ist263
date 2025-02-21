@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+    <meta charset="utf-8">
+        <title>CSS test</title>
+        <!--linked/External-->
+        <link rel="stylesheet" href="style.css">
+        <!--embedded: all h1 is going to be green-->
+        <style>
+            h1 {color:green;font-family: Arial, Helvetica, sans-serif; font-weight: 400;}
+            h1, p {font-style:italic;} <!--grouped selectors-->
+            p a {color:orange;} <!--descendant selector (any 'a's inside the paragraph tag is going to be orange)-->
+            .num1 {font-size: 2em} <!--(class)picking what you want to affect only-->
+            #num1 {font-size: 2em} <!--(id)picking what you want to affect only-->
+        </style>
+    </head>
+
+    <body>
+        <h1>Header One</h1>
+        <p id="num1">Content goes here</p> <!--id can only be used once--> 
+        <p class="num1">Here's a link to <a href="https://wwww.amazon.com">Amazon</a></p> <!--any a tags inside the paragraph will be orange-->
+    </body>
+</html>
