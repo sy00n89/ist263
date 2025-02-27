@@ -1,0 +1,32 @@
+/* Body Background and Text Color */
+body {
+    background-color: #dfdfde;
+    color: #2C3E50;
+    font-family: Garamond, serif;
+}
+
+/* Headings */
+h1, h2 {
+    color: #5a006d;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ebdada;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;  /* Makes items appear in a horizontal row */
+}
+
+nav a {
+    color: #a2798f;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #8caba8;
+}
