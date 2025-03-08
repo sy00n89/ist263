@@ -1,0 +1,64 @@
+/* Body Background and Text Color */
+body {
+    background-color: #dfdfde;
+    color: #2C3E50;
+    font-family: Garamond, serif;
+}
+
+/* Headings */
+h1, h2 {
+    color: #5a006d;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ebdada;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;  /* Makes items appear in a horizontal row */
+}
+
+nav a {
+    color: #a2798f;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #8caba8;
+}
+
+/* Footer */
+.copyright {float: left;}
+.quote {float: right; margin-right: 10px;}
+
+footer {border-top: 1px solid #5a006d;}  /* Adds a horizontal line above the footer */
+
+/* Flexbox */
+.row1, .row2 {
+    display: flex;  /* Enables Flexbox to arrange elements side by side */
+    background-color:#ded4fa;  /* Sets background color for the sections */
+    border-radius: 2em;  /* Rounds the corners for a softer look */
+    justify-content: space-evenly;  /* Distributes space evenly between elements */
+    align-items: center;  /* Ensures vertical alignment */
+    padding: 30px;  /* Adds spacing inside the container for better readability */
+    margin: 30px auto;  /* Centers the flex container and adds space between rows */
+    max-width: 90%;  /* Limits the container width to keep layout balanced */
+    gap: 40px;  /* Adds space between the child elements inside flexbox */
+}
+
+/* Header Styling */
+h1 {
+    text-align: left;  /* Aligns text to the left */
+    margin-left: 4%;  /* Moves the header slightly to the right to align with flexbox */
+}
+
+
+
+
+
+
+
