@@ -10,7 +10,7 @@
 <body>
     <nav>  
         <ul>
-            <li><a href="index copy.html">Home |</a></li>
+            <li><a href="index.html">Home |</a></li> <!-- Removed space in filename -->
             <li><a href="copy3_skills.html">Skills |</a></li>
             <li><a href="copy5_contact.html">Contact</a></li>
         </ul>
@@ -20,56 +20,52 @@
     <div class="row1">
         <div class="address">
             <p><strong>Address:</strong></p> 
-                <hr>
-                    <p>Reese Yoon</p>
-                    <p>Syracuse University</p>
-                    <p>110 Smith Dr, Syracuse, NY 13210</p>
-                </hr>
+            <hr> <!-- Self-closing, no need for </hr> -->
+            <p>Reese Yoon</p>
+            <p>Syracuse University</p>
+            <p>110 Smith Dr, Syracuse, NY 13210</p>
         </div>
         <div class="links">
             <p><strong>Contact Links:</strong></p>
-            <hr>
-                <a href="mailto:syoon23@syr.edu">Reese Yoon Email</a>
-                <p><a href="https://www.linkedin.com/in/reeseyoon/">My LinkedIn Profile</a></p>
-                <p>
-                    <a href="https://www.linkedin.com/in/reeseyoon/">
-                        <img src="../images/linkedin_logo_sized.png" alt="LinkedIn Logo">
-                    </a>
-                </p>
-            </hr>
+            <hr> <!-- Self-closing -->
+            <a href="mailto:syoon23@syr.edu">Reese Yoon Email</a>
+            <p><a href="https://www.linkedin.com/in/reeseyoon/">My LinkedIn Profile</a></p>
+            <p>
+                <a href="https://www.linkedin.com/in/reeseyoon/">
+                    <img src="../images/linkedin_logo_sized.png" alt="LinkedIn Logo">
+                </a>
+            </p>
         </div>
     </div>
     <div class="row2">
         <div class="form">
             <p><strong>Recruiter Form:</strong></p>
-            <hr>
-                <form action="https://formspree.io/f/mrbelbgl" method="POST">
+            <hr> <!-- Self-closing -->
+            <form action="https://formspree.io/f/mrbelbgl" method="POST">
+                <label for="company">Company Name:</label><br>
+                <input type="text" id="company" name="company"><br><br>
 
-                    <label for="company">Company Name:</label><br>
-                    <input type="text" id="company" name="company"><br><br>
+                <label for="role">Open Role:</label><br>
+                <input type="text" id="role" name="role"><br><br>
 
-                    <label for="role">Open Role:</label><br>
-                    <input type="text" id="role" name="role"><br><br>
+                <p>Choose your Role category:</p>
+                <input type="checkbox" id="role1" name="role_category" value="Data Analyst">
+                <label for="role1"> Data Analyst</label><br>
 
-                    <p>Choose your Role category:</p>
-                    <input type="checkbox" id="role1" name="role_category" value="Data Analyst">
-                    <label for="role1"> Data Analyst</label><br>
+                <input type="checkbox" id="role2" name="role_category" value="Data Scientist">
+                <label for="role2"> Data Scientist</label><br>
 
-                    <input type="checkbox" id="role2" name="role_category" value="Data Scientist">
-                    <label for="role2"> Data Scientist</label><br>
+                <input type="checkbox" id="role3" name="role_category" value="Solutions Engineer">
+                <label for="role3"> Solutions Engineer</label><br>
 
-                    <input type="checkbox" id="role3" name="role_category" value="Solutions Engineer">
-                    <label for="role3"> Solutions Engineer</label><br>
+                <input type="checkbox" id="role4" name="role_category" value="AI/ML Engineer">
+                <label for="role4"> AI/ML Engineer</label><br><br>
 
-                    <input type="checkbox" id="role4" name="role_category" value="AI/ML Engineer">
-                    <label for="role4"> AI/ML Engineer</label><br><br>
+                <label for="message">Input any additional detail about the role:</label><br>
+                <textarea id="message" name="message" rows="5" cols="30" placeholder="Input here..."></textarea><br><br>
 
-                    <label for="message">Input any additional detail about the role:</label><br>
-                    <textarea id="message" name="message" rows="5" cols="30" placeholder="Input here..."></textarea><br><br>
-
-                    <button type="submit">Send</button>
-                </form>
-            </hr>        
+                <button type="submit">Send</button>
+            </form>       
         </div>
         <div class="map">
             <p><strong>Map:</strong></p>
