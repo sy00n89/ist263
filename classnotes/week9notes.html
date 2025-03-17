@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Centering</title>
+    <style>
+        p {text-align: center;}
+        .cbox{
+            border: #00FF00 2px solid;
+            width:30%;
+            margin: 0 auto 0 auto; /*top, right, bottom, left*/
+            }
+        .outercontainer {
+            display: flex;
+            border: #ff0000 2px solid;
+            padding: 1em; /*If I only put one, it's going to be applied to all sides*/
+            justify-content: flex-end;
+            }
+        .outercontainer div{ /*any div outside the outercontainer*/
+            border: #0000ff 1px solid;
+            padding: 1em;
+            margin: 1em;
+            flex: 1; /*making sure it's all the same size*/
+            width: 200px;
+            } 
+    </style>
+</head>
+
+<body>
+    <p>Content Goes Here</p>
+
+    <div class="cbox">
+        <p>Please center this box </p>
+    </div>
+    <div class="outercontainer">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+    </div>
+</body>
+
+</html>
