@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 12 Participation</title>
+        <script>
+            function changeColor (){
+                document.getElementById("thepage").style.backgroundColor = document.getElementById("picker").value;
+            }
+        </script>
+        <style>
+            #schoolDiv {
+              font-size: 24px;
+              cursor: pointer;
+            }
+          </style>
+        </head>
+        <body>
+        
+        <div id="schoolDiv" onclick="changeText()">Syracuse University</div>
+        
+        <script>
+          function changeText() {
+            const div = document.getElementById('schoolDiv');
+            div.textContent = "Orange Nation";
+            div.style.color = "orange";
+          }
+        </script>
+        </body>
+</html>
