@@ -21,23 +21,23 @@
 
     <main>
 
-        <section>
-            <div>
+        <section class="welcome">
+            <div class="welcome-img">
                 <img src="project_images/home_1.jpg" alt="Person hugging happy dog" width="400">
             </div>
-            <div>
+            <div class="welcome-text">
                 <h2>Welcome to the Dog Walking Guide!</h2>
                 <p>
-                    Walking your dog is an essential part of their health and happiness...
+                    Walking your dog is an essential part of their health and happiness. Regular walks provide exercise, mental stimulation, and an opportunity to bond with your furry companion (American Kennel Club, 2023). However, extreme weather conditions can make walks unsafe for certain breeds (ASPCA, 2022).
                 </p>
                 <p>
-                    Use our Dog-Weather Checker to determine whether it’s a good time to walk your dog...
+                    Use our Dog-Weather Checker to determine whether it’s a good time to walk your dog. Simply input your location and dog’s breed, and we’ll provide a recommendation based on real-time weather data (NOAA, 2023).
                 </p>
             </div>
         </section>
 
         <section class="form-section">
-            <div>
+            <div class="form-output-container">
                 <form>
                     <fieldset>
                         <legend>Enter Dog Info</legend>
@@ -52,22 +52,13 @@
                         <input type="text" id="location" name="location"><br><br>
                     </fieldset>
                 </form>
-            </div>
 
-            <div class="output">
-                <h3>Output</h3>
-                <p>
-                    Weather recommendation will display here.<br><br>
-                    Current Conditions at Syracuse, NY<br>
-                    Current temperature in Syracuse, NY: 33.22°F<br>
-                    Current conditions: light snow<br><br>
-                    Might be dangerous for your maltese to go out! Keep an eye on your dog while walking!<br>
-                    Recommended walk time for your small dog in 33.22°F weather: 15 minutes.
-                </p>
-            </div>
-
-            <div class="image-container">
-                <img src="project_images/home_2_toolpreview.png" alt="Tool example output image of dog by snowy lake" width="300">
+                <div class="output">
+                    <fieldset>
+                        <legend>Output</legend>
+                        <img src="project_images/home_2_toolpreview.png" alt="Tool example output image of dog by snowy lake" class="output-image">
+                    </fieldset>
+                </div>
             </div>
         </section>
 
