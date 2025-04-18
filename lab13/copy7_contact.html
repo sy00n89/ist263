@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="lab13styles.css">
+</head>
+
+<body>
+    <a href="#maincontent" class="skip-link">Skip to Content</a>
+    <nav>  
+        <ul>
+            <li><a href="index.html">Home <span>|</span></a></li>
+            <li><a href="copy_5_skills.html">Skills <span>|</span></a></li>
+            <li><a href="copy6_contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Contact</h1>
+    <div class="row1">
+        <div class="address">
+            <p><strong>Address:</strong></p> 
+            <hr> <!-- Self-closing, no need for </hr> -->
+            <p>Reese Yoon</p>
+            <p>Syracuse University</p>
+            <p>110 Smith Dr, Syracuse, NY 13210</p>
+        </div>
+        <div class="links">
+            <p><strong>Contact Links:</strong></p>
+            <hr> <!-- Self-closing -->
+            <a href="mailto:syoon23@syr.edu">Reese Yoon Email</a>
+            <p><a href="https://www.linkedin.com/in/reeseyoon/">My LinkedIn Profile</a></p>
+            <p>
+                <a href="https://www.linkedin.com/in/reeseyoon/">
+                    <img src="../images/linkedin_logo_sized.png" alt="LinkedIn Logo">
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="form">
+            <p><strong>Recruiter Form:</strong></p>
+            <hr> <!-- Self-closing -->
+            <form action="https://formspree.io/f/mrbelbgl" method="POST">
+                <label for="company">Company Name:</label><br>
+                <input type="text" id="company" name="company"><br><br>
+
+                <label for="role">Open Role:</label><br>
+                <input type="text" id="role" name="role"><br><br>
+
+                <p>Choose your Role category:</p>
+                <input type="checkbox" id="role1" name="role_category" value="Data Analyst">
+                <label for="role1"> Data Analyst</label><br>
+
+                <input type="checkbox" id="role2" name="role_category" value="Data Scientist">
+                <label for="role2"> Data Scientist</label><br>
+
+                <input type="checkbox" id="role3" name="role_category" value="Solutions Engineer">
+                <label for="role3"> Solutions Engineer</label><br>
+
+                <input type="checkbox" id="role4" name="role_category" value="AI/ML Engineer">
+                <label for="role4"> AI/ML Engineer</label><br><br>
+
+                <label for="message">Input any additional detail about the role:</label><br>
+                <textarea id="message" name="message" rows="5" cols="30" placeholder="Input here..."></textarea><br><br>
+
+                <button type="submit">Send</button>
+            </form>       
+        </div>
+            <p><strong>Map:</strong></p>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=..." 
+            width="600" height="450" style="border:0;" allowfullscreen="">
+            </iframe>
+        
+    </div>
+
+</body>
+</html>
