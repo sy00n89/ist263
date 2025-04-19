@@ -12,7 +12,7 @@ h1, h2 {
 
 /* Navigation Bar */
 nav {
-    background-color: #ebdada;
+    background-color: #eadcdc;
     padding: 10px;
     margin-bottom: 30px;
     text-align: center;
@@ -23,7 +23,7 @@ nav ul li {
 }
 
 nav a {
-    color: #a2798f;
+    color: #513942;
     text-decoration: none;
 }
 
@@ -88,7 +88,6 @@ h1 {
 .skip-link:focus {
     top: 0;
 }
-
 
 @media screen and (max-width: 768px) {
     nav ul {
