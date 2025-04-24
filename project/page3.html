@@ -1,113 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>See the Process - Dog Walking Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>See the Process - Dog Walking Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer>
+    let currentStep = 0;
+
+    function showStep(index) {
+      const steps = document.querySelectorAll('.step');
+      const sidebarLinks = document.querySelectorAll('.sidebar ol li');
+      steps.forEach((step, i) => {
+        step.style.display = i === index ? 'block' : 'none';
+        sidebarLinks[i].classList.toggle('active-step', i === index);
+      });
+    }
+
+    function nextStep() {
+      const steps = document.querySelectorAll('.step');
+      currentStep = (currentStep + 1) % steps.length;
+      showStep(currentStep);
+    }
+
+    function prevStep() {
+      const steps = document.querySelectorAll('.step');
+      currentStep = (currentStep - 1 + steps.length) % steps.length;
+      showStep(currentStep);
+    }
+
+    function jumpToStep(index) {
+      currentStep = index;
+      showStep(currentStep);
+    }
+
+    window.onload = function () {
+      showStep(currentStep);
+    };
+  </script>
 </head>
 <body>
 
-    <!-- Site Title -->
-    <header>
-        <h1>Dog Walking Guide</h1>
-    </header>
+  <header>
+    <h1>Dog Walking Guide</h1>
+  </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="page2.html">Importance of Walking a Dog</a></li>
-            <li><a href="page3.html">See the Process</a></li>
-        </ul>
-    </nav>
+  <nav class="full-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page2.html">Importance of Walking a Dog</a></li>
+      <li><a href="page3.html" class="active">See the Process</a></li>
+    </ul>
+  </nav>
 
-    <main>
+  <main>
+    <section class="intro-text">
+      <h2>The Technology Behind Our Dog-Weather Checker</h2>
+    </section>
 
-        <!-- Page Intro -->
-        <section>
-            <h2>The Technology Behind Our Dog-Weather Checker</h2>
-        </section>
-
-        <!-- Layout Container -->
-        <div class="process-layout">
-
-            <!-- Process Steps -->
-            <section>
-
-                <h3>How Our Dog-Weather Checker Works</h3>
-
-                <div>
-                    <img src="project_images/p2_3.png" alt="Dog weather system flowchart" width="600">
-                </div>
-
-                <article class="step">
-                    <h4>1. User Input</h4>
-                    <p>
-                        The program begins by prompting the user to enter their dog's breed and current location through a simple input form (or in the notebook interface, using <code>input()</code> calls). 
-                        The entered breed name is converted to lowercase and stripped of extra whitespace to improve match accuracy when looking it up in the breed database. 
-                        Input validation ensures that empty or invalid responses are rejected with a helpful error message, prompting the user to try again.
-                        This step lays the foundation for personalized weather recommendations by gathering the two most important user-specific variables: breed (for size and tolerance levels) and geographic location (to determine local weather conditions).
-                    </p>
-                </article>
-
-                <article class="step">
-                    <h4>2. Check Breed in Database</h4>
-                    <p>
-                        After the user inputs their dog's breed, the system loads data from a local file named <code>dogbreed_size.txt</code>. 
-                        This file contains a mapping of dog breeds to their size categories (e.g., small, medium, large). 
-                        The program parses the file line by line, splitting each line at the colon (<code>:</code>) and storing the breed name (converted to lowercase) and size category in a dictionary. 
-                        If the breed exists in the dictionary, its corresponding size category is returned. 
-                        If not, the user is prompted to try again with a more accurate breed name.
-                    </p>
-                </article>
-
-                <article class="step">
-                    <h4>3. Fetch Weather Data (API)</h4>
-                    <p>
-                        The program uses the user's inputted location to first query the <strong>OpenStreetMap Nominatim API</strong> to get the geographic coordinates (latitude and longitude). 
-                        These coordinates are then used to make a second request to the <strong>OpenWeatherMap API</strong>, which returns current weather data such as temperature and descriptive conditions (e.g., "light snow", "clear sky").
-                        This data is parsed from the JSON response, and the weather description is analyzed for any extreme conditions such as hurricanes or blizzards.
-                    </p>
-                </article>
-
-                <article class="step">
-                    <h4>4. Analyze Weather & Breed Suitability</h4>
-                    <p>
-                        Based on the breed's size category and the current temperature, the system compares the weather conditions against a set of predefined safe temperature ranges. 
-                        These ranges are customized by size group: for example, small dogs may only tolerate 39.2–53.6°F. 
-                        The system uses conditional logic to determine if the weather is safe, less safe, or dangerous for that specific breed. 
-                        If extreme conditions are present (e.g., blizzard, extreme heat), the system flags the weather as unsafe for outdoor walks.
-                    </p>
-                </article>
-
-                <article class="step">
-                    <h4>5. Generate Walk Recommendation & Display Result</h4>
-                    <p>
-                        Once the analysis is complete, the program uses HTML rendering (via <code>IPython.display.HTML</code>) to generate dynamic, human-readable output. 
-                        This includes a title showing the current weather conditions, a safety message based on the temperature evaluation, and a walk duration recommendation. 
-                        If the weather is too extreme, the program fetches and displays a list of alternative <strong>indoor activities</strong> for dogs by scraping data from a blog on Rover.com using <code>BeautifulSoup</code>.
-                        All results are shown in the notebook or web interface, making it easy for the user to understand the outcome and take action accordingly.
-                    </p>
-                </article>
-            </section>
-
-            <!-- Sidebar Overview -->
-            <aside class="sidebar">
-                <h4>Process Overview</h4>
-                <ol>
-                    <li>User Input</li>
-                    <li>Check Breed in Database</li>
-                    <li>Fetch Weather Data</li>
-                    <li>Analyze Suitability</li>
-                    <li>Generate Recommendation</li>
-                </ol>
-            </aside>
-
+    <div class="process-layout">
+      <section class="process-main">
+        <h3>How Our Dog-Weather Checker Works</h3>
+        <div class="process-img">
+          <img src="project_images/p2_3.png" alt="Dog weather system flowchart">
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2025 Dog Walking Guide. All rights reserved.</p>
-    </footer>
+        <div class="step">
+          <h4>1. User Input</h4>
+            <p>
+            The program begins by prompting the user to enter their dog's breed and current location through a simple input form (or in the notebook interface, using <code>input()</code> calls). 
+            The entered breed name is converted to lowercase and stripped of extra whitespace to improve match accuracy when looking it up in the breed database. 
+            Input validation ensures that empty or invalid responses are rejected with a helpful error message, prompting the user to try again.
+            This step lays the foundation for personalized weather recommendations by gathering the two most important user-specific variables: breed (for size and tolerance levels) and geographic location (to determine local weather conditions).
+            </p>
+        </div>
+
+        <div class="step">
+          <h4>2. Check Breed in Database</h4>
+            <p>
+            After the user inputs their dog's breed, the system loads data from a local file named <code>dogbreed_size.txt</code>. 
+            This file contains a mapping of dog breeds to their size categories (e.g., small, medium, large). 
+            The program parses the file line by line, splitting each line at the colon (<code>:</code>) and storing the breed name (converted to lowercase) and size category in a dictionary. 
+            If the breed exists in the dictionary, its corresponding size category is returned. 
+            If not, the user is prompted to try again with a more accurate breed name.
+            </p>
+        </div>
+
+        <div class="step">
+          <h4>3. Fetch Weather Data (API)</h4>
+            <p>
+            The program uses the user's inputted location to first query the <strong>OpenStreetMap Nominatim API</strong> to get the geographic coordinates (latitude and longitude). 
+            These coordinates are then used to make a second request to the <strong>OpenWeatherMap API</strong>, which returns current weather data such as temperature and descriptive conditions (e.g., "light snow", "clear sky").
+            This data is parsed from the JSON response, and the weather description is analyzed for any extreme conditions such as hurricanes or blizzards.
+            </p>
+        </div>
+
+        <div class="step">
+          <h4>4. Analyze Weather & Breed Suitability</h4>
+            <p>
+            Based on the breed's size category and the current temperature, the system compares the weather conditions against a set of predefined safe temperature ranges. 
+            These ranges are customized by size group: for example, small dogs may only tolerate 39.2–53.6°F. 
+            The system uses conditional logic to determine if the weather is safe, less safe, or dangerous for that specific breed. 
+            If extreme conditions are present (e.g., blizzard, extreme heat), the system flags the weather as unsafe for outdoor walks.
+            </p>
+        </div>
+
+        <div class="step">
+          <h4>5. Generate Walk Recommendation & Display Result</h4>
+            <p>
+            Once the analysis is complete, the program uses HTML rendering (via <code>IPython.display.HTML</code>) to generate dynamic, human-readable output. 
+            This includes a title showing the current weather conditions, a safety message based on the temperature evaluation, and a walk duration recommendation. 
+            If the weather is too extreme, the program fetches and displays a list of alternative <strong>indoor activities</strong> for dogs by scraping data from a blog on Rover.com using <code>BeautifulSoup</code>.
+            All results are shown in the notebook or web interface, making it easy for the user to understand the outcome and take action accordingly.
+            </p>
+        </div>
+
+        <div class="slideshow-buttons">
+          <button onclick="prevStep()">◀ Previous</button>
+          <button onclick="nextStep()">Next ▶</button>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <h4>Process Overview</h4>
+        <ol>
+          <li onclick="jumpToStep(0)">User Input</li>
+          <li onclick="jumpToStep(1)">Check Breed in Database</li>
+          <li onclick="jumpToStep(2)">Fetch Weather Data</li>
+          <li onclick="jumpToStep(3)">Analyze Suitability</li>
+          <li onclick="jumpToStep(4)">Generate Recommendation</li>
+        </ol>
+
+        <div class="sidebar-image">
+            <img src="project_images/page3.jpg" alt="Dog paw on top of human hands, representing team work">
+          </div>
+
+        <div class="sidebar-tip">
+            <h5>💡 Behind the Scenes Tip</h5>
+            <p>Our system uses real-time APIs and your dog's breed to make walk decisions smarter—not just safer. It's like giving your dog its own weather expert!</p>
+          </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dog Walking Guide. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
+

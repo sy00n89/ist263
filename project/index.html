@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Dog Walking Guide</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Dog Walking Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Your Dog's info is Submitted! Let's see the results!");
+      event.target.reset();
+    }
+  </script>
 </head>
 <body>
 
-    <header>
-        <h1>Dog Walking Guide</h1>
-    </header>
+  <header>
+    <h1>Dog Walking Guide</h1>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="page2.html">Importance of Walking a Dog</a></li>
-            <li><a href="page3.html">See the Process</a></li>
-        </ul>
-    </nav>
+  <nav class="full-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page2.html">Importance of Walking a Dog</a></li>
+      <li><a href="page3.html">See the Process</a></li>
+    </ul>
+  </nav>
 
-    <main>
+  <main>
 
-        <section class="welcome">
-            <div class="welcome-img">
-                <img src="project_images/home_1.jpg" alt="Person hugging happy dog" width="400">
-            </div>
-            <div class="welcome-text">
-                <h2>Welcome to the Dog Walking Guide!</h2>
-                <p>
-                    Walking your dog is an essential part of their health and happiness. Regular walks provide exercise, mental stimulation, and an opportunity to bond with your furry companion (American Kennel Club, 2023). However, extreme weather conditions can make walks unsafe for certain breeds (ASPCA, 2022).
-                </p>
-                <p>
-                    Use our Dog-Weather Checker to determine whether it’s a good time to walk your dog. Simply input your location and dog’s breed, and we’ll provide a recommendation based on real-time weather data (NOAA, 2023).
-                </p>
-            </div>
-        </section>
+    <section class="welcome">
+      <div class="welcome-img">
+        <img src="project_images/home_1.jpg" alt="Person hugging happy dog" />
+      </div>
+      <div class="welcome-text">
+        <h2>Welcome to the Dog Walking Guide!</h2>
+        <p>
+          Walking your dog is an essential part of their health and happiness. Regular walks provide exercise, mental stimulation, and an opportunity to bond with your furry companion (American Kennel Club, 2023). However, extreme weather conditions can make walks unsafe for certain breeds (ASPCA, 2022).
+        </p>
+        <p>
+          Use our Dog-Weather Checker to determine whether it’s a good time to walk your dog. Simply input your location and dog’s breed, and we’ll provide a recommendation based on real-time weather data (NOAA, 2023).
+        </p>
+      </div>
+    </section>
 
-        <section class="form-section">
-            <h2>Dog Walk Weather Checker</h2> 
+    <section class="form-section">
+      <h2>Dog Walk Weather Checker</h2>
 
-            <div class="form-output-container">
-                <form>
-                    <fieldset>
-                        <legend>Enter Dog Info</legend>
+      <div class="form-output-container">
+        <form onsubmit="handleSubmit(event)">
+          <fieldset>
+            <legend>Enter Dog Info</legend>
 
-                        <label for="breed">Enter Your Dog's Breed:</label><br>
-                        <input type="text" id="breed" name="breed"><br><br>
+            <label for="breed">Enter Your Dog's Breed:</label>
+            <input type="text" id="breed" name="breed" required />
 
-                        <label for="size">Size Category for "input":</label><br>
-                        <input type="text" id="size" name="size"><br><br>
+            <label for="size">Size Category of Your Dog:</label>
+            <input type="text" id="size" name="size" required />
 
-                        <label for="location">Enter Your Current Location:</label><br>
-                        <input type="text" id="location" name="location"><br><br>
-                    </fieldset>
-                </form>
+            <label for="location">Enter Your Current Location:</label>
+            <input type="text" id="location" name="location" required />
 
-                <div class="output">
-                    <fieldset>
-                        <legend>Output</legend>
-                        <img src="project_images/home_2_toolpreview.png" alt="Tool example output image of dog by snowy lake" class="output-image">
-                    </fieldset>
-                </div>
-            </div>
-        </section>
+            <button type="submit" class="submit-button">Submit</button>
+          </fieldset>
+        </form>
 
-    </main>
+        <div class="output">
+          <fieldset>
+            <legend>Output</legend>
+            <img src="project_images/home_2_toolpreview.png" alt="Tool example output image of dog by snowy lake" class="output-image"/>
+          </fieldset>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Dog Walking Guide. All rights reserved.</p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dog Walking Guide. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
