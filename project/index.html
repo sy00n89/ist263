@@ -16,9 +16,8 @@
       event.target.reset();
     }
   </script>
-
-
 </head>
+
 <body>
 
   <div class="weather-banner">
@@ -29,14 +28,11 @@
     <span class="cloud">☁️</span>
     <span class="sun">🌤️</span>
   </div>
-  
 
   <header>
     <h1>Dog Walking Guide</h1>
+    <p class="tagline">Instant dog-walking weather check — just enter your dog’s info and location!</p>
   </header>
-
-  <p class="tagline">Instant dog-walking weather check — just enter your dog’s info and location!</p>
-
 
   <nav class="full-nav">
     <ul>
@@ -79,12 +75,11 @@
 
               <label for="size">Size Category of Your Dog :</label>
               <select id="size" name="size" required>
-              <option value="">--- Select Size ---</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
+                <option value="">--- Select Size ---</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
               </select>
-
 
               <label for="location">🌦️ Enter Your Current Location: </label>
               <input type="text" id="location" name="location" required />
@@ -98,37 +93,34 @@
           </div>
         </div>
 
-
         <div class="output">
           <fieldset>
             <legend>Output</legend>
-        
+
             <div class="centered-stars">
               <div>****************************************</div>
               <div><strong>Your Dog's Weather Checker</strong></div>
               <div>****************************************</div>
             </div>
-        
+
             <div class="output-intro">
               <p>Enter your dog's breed: <strong>Maltese</strong></p>
               <p>Size category for Maltese: <strong>Small</strong></p>
               <p>Enter your current location: <strong>Syracuse, NY</strong></p>
             </div>
-        
+
             <div class="output-weather">
               <h3>Current Conditions at Syracuse, NY</h3>
               <p>Current temperature in Syracuse, NY: <strong>33.22°F</strong></p>
               <p>Current conditions in Syracuse, NY: <strong>light snow</strong></p>
               <br>
-        
+
               <h3 class="warning">Might be dangerous for your maltese to go out! Keep an eye on your dog while walking!</h3>
-        
+
               <p class="recommended">Recommended walk time for your small dog in 33.22°F weather: <strong>15 minutes</strong>.</p>
             </div>
-        
           </fieldset>
-        </div>        
-        
+        </div>
       </div>
     </section>
 
