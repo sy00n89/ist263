@@ -16,12 +16,27 @@
       event.target.reset();
     }
   </script>
+
+
 </head>
 <body>
+
+  <div class="weather-banner">
+    ☁️ Rain or shine, check the best time to walk your furry friend!
+  </div>
+
+  <div class="floating-icons">
+    <span class="cloud">☁️</span>
+    <span class="sun">🌤️</span>
+  </div>
+  
 
   <header>
     <h1>Dog Walking Guide</h1>
   </header>
+
+  <p class="tagline">Instant dog-walking weather check — just enter your dog’s info and location!</p>
+
 
   <nav class="full-nav">
     <ul>
@@ -49,32 +64,71 @@
     </section>
 
     <section class="form-section">
-      <h2>Dog Walk Weather Checker</h2>
+      <header>
+        <h1>Check the Weather Before Walking Your Dog 🐾</h1>
+      </header>
 
       <div class="form-output-container">
-        <form onsubmit="handleSubmit(event)">
-          <fieldset>
-            <legend>Enter Dog Info</legend>
+        <div class="form-and-image">
+          <form onsubmit="handleSubmit(event)">
+            <fieldset>
+              <legend>Enter Dog Info</legend>
 
-            <label for="breed">Enter Your Dog's Breed:</label>
-            <input type="text" id="breed" name="breed" required />
+              <label for="breed">🐾 Enter Your Dog's Breed:</label>
+              <input type="text" id="breed" name="breed" required />
 
-            <label for="size">Size Category of Your Dog:</label>
-            <input type="text" id="size" name="size" required />
+              <label for="size">Size Category of Your Dog :</label>
+              <select id="size" name="size" required>
+              <option value="">--- Select Size ---</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              </select>
 
-            <label for="location">Enter Your Current Location:</label>
-            <input type="text" id="location" name="location" required />
 
-            <button type="submit" class="submit-button">Submit</button>
-          </fieldset>
-        </form>
+              <label for="location">🌦️ Enter Your Current Location: </label>
+              <input type="text" id="location" name="location" required />
+
+              <button type="submit" class="submit-button">🐶 Submit</button>
+            </fieldset>
+          </form>
+
+          <div class="form-image-container">
+            <img src="project_images/home_2.jpg" alt="Dog sitting near lake" />
+          </div>
+        </div>
+
 
         <div class="output">
           <fieldset>
             <legend>Output</legend>
-            <img src="project_images/home_2_toolpreview.png" alt="Tool example output image of dog by snowy lake" class="output-image"/>
+        
+            <div class="centered-stars">
+              <div>****************************************</div>
+              <div><strong>Your Dog's Weather Checker</strong></div>
+              <div>****************************************</div>
+            </div>
+        
+            <div class="output-intro">
+              <p>Enter your dog's breed: <strong>Maltese</strong></p>
+              <p>Size category for Maltese: <strong>Small</strong></p>
+              <p>Enter your current location: <strong>Syracuse, NY</strong></p>
+            </div>
+        
+            <div class="output-weather">
+              <h3>Current Conditions at Syracuse, NY</h3>
+              <p>Current temperature in Syracuse, NY: <strong>33.22°F</strong></p>
+              <p>Current conditions in Syracuse, NY: <strong>light snow</strong></p>
+              <br>
+        
+              <h3 class="warning">Might be dangerous for your maltese to go out! Keep an eye on your dog while walking!</h3>
+        
+              <p class="recommended">Recommended walk time for your small dog in 33.22°F weather: <strong>15 minutes</strong>.</p>
+            </div>
+        
           </fieldset>
-        </div>
+        </div>        
+        
       </div>
     </section>
 
